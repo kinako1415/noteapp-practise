@@ -1,7 +1,14 @@
 import "./App.css";
+import Main from "./components/Main";
+import Sidebar from "./components/Sidebar";
 
 function App() {
-  return <></>;
+  return (
+    <div className="App">
+      <Sidebar />
+      <Main />
+    </div>
+  );
 }
 
 export default App;
