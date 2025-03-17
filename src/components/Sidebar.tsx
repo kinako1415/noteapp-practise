@@ -1,11 +1,11 @@
 import styles from "./Sidebar.module.css";
 
-const Sidebar = () => {
+const Sidebar = ({ onAddNote }: { onAddNote: () => void }) => {
   return (
     <div className={styles.sidebar}>
       <div className={styles.header}>
         <h1>ノート</h1>
-        <button>追加</button>
+        <button onClick={onAddNote}>追加</button>
       </div>
       <div className={styles.notes}>
         <div className={styles.note}>
