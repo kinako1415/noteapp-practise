@@ -24,6 +24,8 @@ function App() {
     setNotes([...notes, newNote]);
   };
 
+  const onDeleteNote = (id) => {};
+
   return (
     <div className="App">
       <Sidebar onAddNote={onAddNote} notes={notes} />
