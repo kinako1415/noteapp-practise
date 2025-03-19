@@ -1,4 +1,5 @@
 import styles from "./Main.module.css";
+import ReactMarkdown from "react-markdown";
 
 type newNoteType = {
   id: string;
@@ -49,7 +50,9 @@ const Main = ({
       </div>
       <div className={styles.mainNotePrev}>
         <h1 className={styles.prevTitle}>{activeNote.title}</h1>
-        <div className={styles.markdownPrev}>{activeNote.content}</div>
+        <div className={styles.markdownPrev}>
+          <ReactMarkdown>{activeNote.content}</ReactMarkdown>
+        </div>
       </div>
     </div>
   );
