@@ -1,6 +1,17 @@
 import styles from "./Main.module.css";
 
-const Main = () => {
+type newNoteType = {
+  id: string;
+  title: string;
+  content: string;
+  modDate: number;
+};
+
+const Main = ({ activeNote }: { activeNote: newNoteType }) => {
+  if (!activeNote) {
+    return <div>ノートが選択されていません</div>;
+  }
+
   return (
     <div className={styles.main}>
       <div className={styles.mainNoteEdit}>
@@ -8,8 +19,8 @@ const Main = () => {
         <textarea id="" placeholder="ノート内容を記入"></textarea>
       </div>
       <div className={styles.mainNotePrev}>
-        <h1 className={styles.prevTitle}>タイトル</h1>
-        <div className={styles.markdownPrev}>ノート内容</div>
+        <h1 className={styles.prevTitle}>{activeNote.title}</h1>
+        <div className={styles.markdownPrev}>{activeNote.content}</div>
       </div>
     </div>
   );
