@@ -1,7 +1,7 @@
 import styles from "./Sidebar.module.css";
 
 type newNoteType = {
-  id: number;
+  id: string;
   title: string;
   content: string;
   modDate: number;
@@ -9,9 +9,11 @@ type newNoteType = {
 
 const Sidebar = ({
   onAddNote,
+  onDeleteNote,
   notes,
 }: {
   onAddNote: () => void;
+  onDeleteNote: (id: string) => void;
   notes: newNoteType[];
 }) => {
   return (
@@ -26,7 +28,7 @@ const Sidebar = ({
             <div key={index} className={styles.note}>
               <div className={styles.title}>
                 <strong>{note.title}</strong>
-                <button>削除</button>
+                <button onClick={() => onDeleteNote(note.id)}>削除</button>
               </div>
               <p>{note.content}</p>
               <small>
