@@ -9,7 +9,9 @@ type newNoteType = {
 
 const Main = ({ activeNote }: { activeNote: newNoteType }) => {
   if (!activeNote) {
-    return <div>ノートが選択されていません</div>;
+    return (
+      <div className={styles.noActiveNote}>ノートが選択されていません</div>
+    );
   }
 
   return (
