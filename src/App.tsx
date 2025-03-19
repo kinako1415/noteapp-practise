@@ -13,6 +13,7 @@ type newNoteType = {
 
 function App() {
   const [notes, setNotes] = useState<newNoteType[]>([]);
+  const [activeNote, setActiveNote] = useState("not");
 
   const onAddNote = () => {
     console.log("ノートが新しく作成されました。");
@@ -36,6 +37,8 @@ function App() {
         onAddNote={onAddNote}
         onDeleteNote={onDeleteNote}
         notes={notes}
+        activeNote={activeNote}
+        setActiveNote={setActiveNote}
       />
       <Main />
     </div>
